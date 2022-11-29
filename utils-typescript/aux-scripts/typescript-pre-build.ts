@@ -1,6 +1,6 @@
 "use strict";
 
-import { existsSync, rmSync } from 'fs'
+import { existsSync, rmSync } from 'node:fs'
 
 const DIST_FOLDER = "./dist"
 deleteOldDistFolder(DIST_FOLDER)

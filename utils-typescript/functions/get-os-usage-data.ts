@@ -1,6 +1,6 @@
 "use strict";
 
-import { totalmem, freemem } from "os";
+import { totalmem, freemem } from "node:os";
 import nodeos from "node-os-utils";
 const { cpu } = nodeos
 

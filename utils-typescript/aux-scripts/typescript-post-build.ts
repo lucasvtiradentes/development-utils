@@ -1,7 +1,7 @@
 "use strict";
 
-import { join, extname, dirname } from 'path'
-import { readFileSync, writeFileSync, statSync, readdirSync, copyFileSync, existsSync, mkdirSync } from 'fs'
+import { join, extname, dirname } from 'node:path'
+import { readFileSync, writeFileSync, statSync, readdirSync, copyFileSync, existsSync, mkdirSync } from 'node:fs'
 
 /* COPY FOLDERS ############################################################# */
 

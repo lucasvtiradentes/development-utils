@@ -41,37 +41,59 @@ This project contains the following content:
       <td align="left">Where I put all my dotfiles for custom settings in some softwares like git and vscode.</td>
     </tr>
     <tr>
-      <td>knowledge</td>
+      <td>github-actions</td>
+      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/github-actions">github-actions</a></td>
+      <td align="left">Where I put all my github actions templates, used to CI-CD.</td>
+    </tr>
+    <tr>
+      <td rowspan="2">knowledge</td>
       <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/knowledge-concepts">knowledge-concepts</a></td>
       <td align="left">Where I store development  related tricky concepts.</td>
     </tr>
     <tr>
-      <td>knowledge</td>
+      <!-- <td>knowledge</td> -->
       <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/knowledge-technologies">knowledge-technologies</a></td>
       <td align="left">Where I store technologies general knowledge.</td>
     </tr>
     <tr>
-      <td>scripts</td>
-      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/helper-build">helper-build</a></td>
+      <td rowspan="2">javascript utils</td>
+      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/utils-javascript/chrome-extensions-utils">chrome-extension-utils</a></td>
+      <td align="left">Useful scripts to use in chrome extensions</td>
+    </tr>
+    <tr>
+      <!-- <td>javascript utils</td> -->
+      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/utils-javascript/browser-utils">browser-utils</a></td>
+      <td align="left">Useful scripts to use in browser environments</td>
+    </tr>
+    <tr>
+      <td rowspan="4">typescript utils</td>
+      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/utils-typescript/aux-scripts">aux-scripts</a></td>
       <td align="left">Useful typescript building time scripts.</td>
     </tr>
     <tr>
-      <td>scripts</td>
-      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/helper-functions">helper-functions</a></td>
+      <!-- <td>typescript utils</td> -->
+      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/utils-typescript/functions">functions</a></td>
       <td align="left">Useful typescript functions.</td>
     </tr>
     <tr>
-      <td>scripts</td>
-      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/helper-utils">helper-utils</a></td>
+      <!-- <td>typescript utils</td> -->
+      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/utils-typescript/node-utils">node-utils</a></td>
       <td align="left">Useful typescript utils scripts.</td>
     </tr>
     <tr>
-      <td>scripts</td>
-      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/helper-package-utils">helper-package-utils</a></td>
+      <!-- <td>typescript utils</td> -->
+      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/utils-typescript/package-utils">package-utils</a></td>
       <td align="left">Useful typescript packages utils scripts.</td>
+    </tr>
+    <tr>
+      <td>boilerplates</td>
+      <td align="left"><a href="https://github.com/lucasvtiradentes/boilerplate-projects">boilerplates</a></td>
+      <td align="left">Useful boilerplates to quick start projects.</td>
     </tr>
   </table>
 </div>
+
+
 
 ---
 
