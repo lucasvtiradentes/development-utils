@@ -1,0 +1,21 @@
+{
+  "Add-React-Component": {
+    "scope": "typescriptreact",
+    "prefix": "comp",
+    "body": [
+      "",
+      "interface propsType {",
+      "  simple: string",
+      "}",
+      "",
+      "const ${1: Comp} = (props: propsType) => {",
+      "  console.log(props)",
+      "  return (",
+      "    <div>${1: Comp}</div>",
+      "  )",
+      "}",
+      "export { ${1: Comp} } "
+    ],
+    "description": "Log output to console"
+  }
+}

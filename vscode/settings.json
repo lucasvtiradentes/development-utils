@@ -1,0 +1,105 @@
+{
+  // TERMINAL ==================================================================
+  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  // INTERFACE =================================================================
+  "workbench.colorTheme": "Dracula",
+  "workbench.iconTheme": "material-icon-theme",
+  "explorer.openEditors.visible": 0,
+  // FILE EDITING ==============================================================
+  "breadcrumbs.enabled": false,
+  "workbench.editor.labelFormat": "default",
+  "editor.renderLineHighlight": "gutter",
+  "editor.guides.indentation": true,
+  "editor.rulers": [
+    80,
+    100
+  ],
+  // FONT ======================================================================
+  "editor.fontSize": 14,
+  "editor.fontFamily": "Fira Code light",
+  // SETTINGS ==================================================================
+  "window.restoreWindows": "none",
+  "explorer.compactFolders": false,
+  "extensions.ignoreRecommendations": true,
+  "workbench.editor.scrollToSwitchTabs": true,
+  "workbench.startupEditor": "none",
+  "extensions.autoUpdate": false,
+  // "editor.hover.enabled": false,
+  // FORMATING =================================================================
+  "editor.formatOnPaste": false,
+  "editor.formatOnType": false,
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "off",
+  "editor.tabSize": 2,
+  "files.trimTrailingWhitespace": true,
+  // IMPORTING FILES ===========================================================
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "javascript.suggest.autoImports": true,
+  "typescript.suggest.autoImports": true,
+  // PARAMETER SUGGESTIONS =====================================================
+  "editor.parameterHints.enabled": false,
+  "editor.quickSuggestionsDelay": 500,
+  // VSCODE EXPLORER ===========================================================
+  "liveServer.settings.donotVerifyTags": true,
+  // PATHS SUGGESTIONS =========================================================
+  "javascript.suggest.paths": false,
+  "typescript.suggest.paths": false,
+  // SYNC CONFIGS ==============================================================
+  "sync.autoDownload": false,
+  "sync.autoUpload": false,
+  "sync.forceDownload": false,
+  "sync.forceUpload": false,
+  "sync.gist": "473aa4908d404300f88c2ba3bb869b05",
+  // FIRA CODE =================================================================
+  "editor.fontLigatures": true,
+  // LIVE SERVER ===============================================================
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  // PRETIER ===================================================================
+  "editor.formatOnSave": true,
+  // TS CONFIGURATION ==========================================================
+  "[typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // JS CONFIGURATION ==========================================================
+  "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  // CSS CONFIGURATION =========================================================
+  "[css]": {
+    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+  },
+  "css.lint.unknownAtRules": "ignore",
+  // REACT CONFIGURATION =======================================================
+  "emmet.syntaxProfiles": {
+    "javascript": "jsx"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  // JSON CONFIGURATION ========================================================
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+}

@@ -1,0 +1,12 @@
+## FOLDERS =========================
+/**/node_modules
+/**/build
+/**/dist
+/**/.next
+/**/.git
+
+## FILES ============================
+/**/.env
+/**/package-lock.json
+/**/yarn-lock.json
+/**/pnpm-lock.yml

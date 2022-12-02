@@ -1,0 +1,6 @@
+## folders ################################
+node_modules/
+tokens/
+
+## files ##################################
+pnpm-lock.yaml

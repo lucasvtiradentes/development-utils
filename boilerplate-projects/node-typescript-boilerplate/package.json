@@ -1,0 +1,39 @@
+{
+  "name": "node-typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "This is node boilerplate that uses eslint, prettier, editor config and typescript.",
+  "license": "MIT",
+  "homepage": "https://github.com/lucasvtiradentes/boilerplate-projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucasvtiradentes/boilerplate-projects.git"
+  },
+  "author": {
+    "name": "Lucas Vieira",
+    "email": "lucasvtiradentes@gmail.com",
+    "url": "https://www.linkedin.com/in/lucasvtiradentes"
+  },
+  "bugs": {
+    "url": "https://github.com/lucasvtiradentes/boilerplate-projects/issues"
+  },
+  "main": "src/index.js",
+  "scripts": {
+    "commit": "cz",
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node build/index.js"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.2",
+    "prettier": "^2.8.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.9.3"
+  }
+}
