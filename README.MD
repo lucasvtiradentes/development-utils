@@ -93,8 +93,6 @@ This project contains the following content:
   </table>
 </div>
 
-
-
 ---
 
 Made with ♥ by Lucas Vieira.
