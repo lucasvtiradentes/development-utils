@@ -48,6 +48,9 @@ This project uses the following technologies:
         <a target="_blank" href="https://editorconfig.org/"><img src="https://img.shields.io/badge/editorconfig-gray?style=for-the-badge&logo=editorconfig&logoColor=white"></a>
         <a target="_blank" href="https://eslint.org/"><img src="https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white"></a>
         <a target="_blank" href="https://eslint.org/"><img src="https://img.shields.io/badge/prettier-blue?style=for-the-badge&logo=prettier&logoColor=white"></a>
+        <a target="_blank" href="https://github.com/typicode/husky"><img src="https://img.shields.io/badge/🐶husky-yellow?style=for-the-badge&logo=husky&logoColor=white"></a>
+        <a target="_blank" href="https://github.com/conventional-changelog/commitlint"><img src="https://img.shields.io/badge/commitlint-red?style=for-the-badge&logo=commitlint&logoColor=white"></a>
+        <a target="_blank" href="https://github.com/commitizen/cz-cli"><img src="https://img.shields.io/badge/commitizen-pink?style=for-the-badge&logo=conventionalcommits&logoColor=white"></a>
       </td>
     </tr>
   </table>
@@ -65,14 +68,18 @@ $ npm install
 $ npm run dev
 ```
 
+As this project uses `husky`, make sure to run the following command after initialize git in the folder: `npx husky install`. Only after this command husky will be able to check commit messages validation.
+
 ## :information_source: How to publish it
 
 The first step is to change the package `name` and the `repository` keys in the `package.json` file to the name you want the package to be.
 
 Second, go to NPM and create a `TOKEN` for automation, as its shown in the following link:
+
 - [How to generate NPM token tutorial](https://docs.npmjs.com/creating-and-viewing-access-tokens)
 
 Third, create a github repository and setup a github secret containing the `NPM TOKEN` in order to github publish it directly.
+
 - [How to create github secret tutorial](https://github.com/Azure/actions-workflow-samples/blob/master/assets/create-secrets-for-GitHub-workflows.md)
 - Name it as `NPM_AUTH_TOKEN`
 

@@ -1,5 +1,5 @@
 <h1 align="center">
-    node typescript github package ci cd publish
+    node typescript npm package ci cd publish with semantic version
 </h1>
 
 <p align="center">
@@ -14,11 +14,13 @@
 
 ## :information_source: Description
 
-This is a boilerplate to automatically deploy a github package through github actions.
+This is a boilerplate to automatically deploy a npm package through github actions and semantic release.
 
 ## :information_source: Features
 
-- [x] automatically deploy a github package.
+- [x] automatically deploy a npm package;
+- [x] automatically generate tags, releases;
+- [x] automatically project versioning.
 
 ## :information_source: Technologies
 
@@ -72,18 +74,16 @@ As this project uses `husky`, make sure to run the following command after initi
 
 ## :information_source: How to publish it
 
-The first step is to change the `name`, `publishConfig` and `repository` keys in the `package.json` file to the name you want the package to be. Remember that, until now, github packages only allow this format of package name: **@lucasvtiradentes/other-package-github**
+The first step is to change the package `name` and the `repository` keys in the `package.json` file to the name you want the package to be.
 
-Second, go to the `.github/workflows/github-package-publish.yml` file and edit the scope property to your github user name.
+Second, go to NPM and create a `TOKEN` for automation, as its shown in the following link:
 
-```yml
-- name: setup-node
-  uses: actions/setup-node@v2
-  with:
-    node-version: 16
-    registry-url: 'https://npm.pkg.github.com'
-    scope: '@lucasvtiradentes'
-```
+- [How to generate NPM token tutorial](https://docs.npmjs.com/creating-and-viewing-access-tokens)
+
+Third, create a github repository and setup a github secret containing the `NPM TOKEN` in order to github publish it directly.
+
+- [How to create github secret tutorial](https://github.com/Azure/actions-workflow-samples/blob/master/assets/create-secrets-for-GitHub-workflows.md)
+- Name it as `NPM_TOKEN`
 
 After, edit the code and make the changes you want to and push it to the github as it follows:
 
@@ -92,7 +92,7 @@ After, edit the code and make the changes you want to and push it to the github 
 $ git add .
 
 # Write a commit message
-$ git commit -m "commit message"
+$ git commit -m "your commit message"
 
 # Pushes the code into github
 $ git push origin master
@@ -102,25 +102,14 @@ Finally, the github actions will take place and publish the package.
 
 ## :information_source: How to use it
 
-To use the package you published, you'll need to create A PAT (Personal account token) with the `read package` permission, as it is show in the link bellow:
-
-- [How to create a PAT in github?](https://docs.github.com/en/enterprise-server@3.4/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token)
-
-After that, simple copy the `example folder` in this repository to another place, and edit the `.npmrc` as it is shown:
-
-```
-@YOUR_GITHUB_USER:registry=https://npm.pkg.github.com/
-//npm.pkg.github.com/:_authToken=YOUR_GITHUB_TOKEN
-```
-
-After that, you are now allowed to install you private package as it follows:
+To use it install it as a npm normal package:
 
 ```bash
 # Install the package
-$ npm install "@lucasvtiradentes/other-package-github"
+$ npm install your_package_name
 ```
 
-and use it in your js/ts files normally, as it is shown in the examples folder files.
+and use it in your js/ts files, as it is shown in the examples folder files.
 
 ---
 

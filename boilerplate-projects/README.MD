@@ -84,7 +84,7 @@ This is where I save my boilerplate projects that I use to fast coding.
       <td align="left">-</td>
     </tr>
     <tr>
-      <td rowspan="3">node</td>
+      <td rowspan="4">node</td>
       <td align="left">
         <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/node-typescript-boilerplate">node-typescript</a>
       </td>
@@ -103,6 +103,13 @@ This is where I save my boilerplate projects that I use to fast coding.
         <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/node-typescript-npm-package-ci-cd-publish-boilerplate">node-typescript-npm-package-ci-cd-publish</a>
       </td>
       <td align="left">Automatclly publishes a package to npm with github actions.</td>
+    </tr>
+    <tr>
+      <!-- <td>base</td> -->
+      <td align="left">
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/node-typescript-npm-package-ci-cd-publish-with-semantic-release-boilerplate">node-typescript-npm-package-ci-cd-publish-with-semantic-release</a>
+      </td>
+      <td align="left">Automatclly publishes a package to npm with github actions and semantic release.</td>
     </tr>
     <tr>
       <td>browser</td>
