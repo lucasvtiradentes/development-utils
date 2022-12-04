@@ -42,7 +42,7 @@ This is where I save my boilerplate projects that I use to fast coding.
       <td align="left">-</td>
     </tr>
     <tr>
-      <td rowspan="2">backend</td>
+      <td rowspan="3">backend</td>
       <td align="left">
         <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/express-react-boilerplate">express-react</a>
       </td>
@@ -55,7 +55,14 @@ This is where I save my boilerplate projects that I use to fast coding.
       </td>
       <td align="left">-</td>
     </tr>
+    <t
     <tr>
+      <!-- <td>backend</td> -->
+      <td align="left">
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/node-typescript-graphql-api-boilerplate">node-typescript-graphql-api</a>
+      </td>
+      <td align="left">-</td>
+    </tr>r>
       <td rowspan="4">desktop</td>
       <td align="left">
         <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/electron-puppeteer-typescript-boilerplate">electron-puppeteer-typescript</a>

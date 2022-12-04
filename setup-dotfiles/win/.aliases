@@ -1,0 +1,90 @@
+## SHOW ALIASES ========================================
+
+echo "-> Loaded .aliases WIN"
+
+## SHOW CURRENT TERMINAL ===============================
+
+echo ""
+[[ $- == *i* ]] && echo shell: Interactive || echo shell: Non-interactive 
+echo ___OS: $opSystem
+echo ""
+
+## TOKENS ==============================================
+
+
+export GH_TOKEN=''
+export AWS_ACCESS_KEY_ID=''
+export AWS_SECRET_ACCESS_KEY=''
+
+## ALIAS - NPM =========================================
+
+alias ni='npm install'
+alias nr='npm run'
+
+## ALIAS - COMMITS =====================================
+
+alias ga='git add .'
+alias gac='git add  . && git commit -m'
+alias gaca='git add . && git commit --amend --no-edit'
+alias gacam='git add . && git commit --amend -m'
+
+## ALIAS - LOGS ========================================
+
+alias lg="git log --oneline --decorate --all --graph"
+alias gl="git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(white)%s%C(reset) %C(green)%an %ar %C(reset) %C(bold magenta)%d%C(reset)'"
+alias gla="git log --all --graph --format=format:'%C(bold blue)%h%C(reset) - %C(white)%s%C(reset) %C(bold magenta)%d%C(reset)'"
+
+## ALIAS - PUSH ========================================
+
+alias po='git push -u origin '
+alias pom='git push -u origin master'
+
+## ALIAS - BRANCHES ====================================
+
+alias gco='git checkout'
+alias gcom='git checkout master'
+alias col='git checkout --'
+alias cob='git checkout -b'
+alias gb='git branch'
+alias gba='git branch --all'
+alias gbd='git branch -D'
+
+## ALIAS - OTHER =======================================
+
+alias d=docker
+alias dc=docker-compose
+alias c='clear'
+alias gcp='git cherry-pick'
+alias gd='git diff -w'
+
+## ALIAS - LS ==========================================
+
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+
+## ALIAS - UNDO ========================================
+
+# git unstage file.js = will remove file from stagging area
+alias unstage='reset HEAD --'
+
+# git undo file.js = will undo all changes made in the file since last commit
+alias undo='checkout --'
+
+# will delete last commit but preserve file changes
+alias rollback='reset --soft HEAD~1'
+
+## FUNCTIONS ===========================================
+
+note (){
+  echo "date: $(date)" >> $HOME/drafts.txt
+  echo "$@" >> $HOME/drafts.txt
+  echo "" >> $HOME/drafts.txt
+}
+
+dclear () {
+  docker ps -a -q | xargs docker kill -f
+  docker ps -a -q | xargs docker rm -f
+  docker images | grep "api\|none" | awk '{print $3}' | xargs docker rmi -f
+  docker volume prune -f
+}

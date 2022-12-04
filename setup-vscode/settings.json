@@ -34,6 +34,13 @@
   "editor.wordWrap": "off",
   "editor.tabSize": 2,
   "files.trimTrailingWhitespace": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    // "source.organizeImports": true,
+    "source.fixAll.eslint": true,
+    "source.fixAll.tslint": true,
+    "source.fixAll.stylelint": true
+  },
   // IMPORTING FILES ===========================================================
   "javascript.updateImportsOnFileMove.enabled": "never",
   "typescript.updateImportsOnFileMove.enabled": "never",
@@ -60,21 +67,38 @@
   "explorer.confirmDragAndDrop": false,
   // PRETIER ===================================================================
   "editor.formatOnSave": true,
-  // TS CONFIGURATION ==========================================================
-  "[typescriptreact]": {
-    "editor.codeActionsOnSave": {
-      "source.fixAll.eslint": true
-    },
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "prettier.bracketSpacing": false,
+  // CSS CONFIGURATION =========================================================
+  "[css]": {
+    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
   },
+  "css.validate": false,
+  "css.lint.unknownAtRules": "ignore",
+  // JSON CONFIGURATION ========================================================
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  // TS CONFIGURATION ==========================================================
   "[typescript]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
   // JS CONFIGURATION ==========================================================
   "[javascript]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": false,
+  // REACT CONFIGURATION =======================================================
+  "[typescriptreact]": {
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
     },
@@ -86,20 +110,10 @@
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // CSS CONFIGURATION =========================================================
-  "[css]": {
-    "editor.defaultFormatter": "aeschli.vscode-css-formatter"
-  },
-  "css.lint.unknownAtRules": "ignore",
-  // REACT CONFIGURATION =======================================================
   "emmet.syntaxProfiles": {
     "javascript": "jsx"
   },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-  },
-  // JSON CONFIGURATION ========================================================
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
+  }
 }

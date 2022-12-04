@@ -59,7 +59,7 @@
     "key": "ctrl+4",
     "command": "workbench.action.terminal.sendSequence",
     "args": {
-      "text": "npm run publish\u000D"
+      "text": "npm run commit\u000D"
     }
   },
   // WORD UTILS ================================================================

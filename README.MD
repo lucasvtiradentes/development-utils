@@ -52,12 +52,12 @@ This project contains the following content:
     </tr>
     <tr>
       <td rowspan="2">settings</td>
-      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/dotfiles">dotfiles</a></td>
+      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/setup-dotfiles">dotfiles</a></td>
       <td align="left">Where I put all my dotfiles for custom settings for git.</td>
     </tr>
     <tr>
       <!-- <td>settings</td> -->
-      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/vscode">vscode</a></td>
+      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/setup-vscode">vscode</a></td>
       <td align="left">Where I put all my vscode custom settings files.</td>
     </tr>
     <tr>
