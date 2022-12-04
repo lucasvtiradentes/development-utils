@@ -1,1 +1,0 @@
-## How to setup development environment on windows

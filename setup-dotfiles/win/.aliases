@@ -1,20 +1,6 @@
-## SHOW ALIASES ========================================
+## LOAD ALIASES ========================================
 
 echo "-> Loaded .aliases WIN"
-
-## SHOW CURRENT TERMINAL ===============================
-
-echo ""
-[[ $- == *i* ]] && echo shell: Interactive || echo shell: Non-interactive 
-echo ___OS: $opSystem
-echo ""
-
-## TOKENS ==============================================
-
-
-export GH_TOKEN=''
-export AWS_ACCESS_KEY_ID=''
-export AWS_SECRET_ACCESS_KEY=''
 
 ## ALIAS - NPM =========================================
 
@@ -23,8 +9,8 @@ alias nr='npm run'
 
 ## ALIAS - COMMITS =====================================
 
-alias ga='git add .'
-alias gac='git add  . && git commit -m'
+alias gaa='git add .'
+alias gc="git commit -m"
 alias gaca='git add . && git commit --amend --no-edit'
 alias gacam='git add . && git commit --amend -m'
 
@@ -34,10 +20,11 @@ alias lg="git log --oneline --decorate --all --graph"
 alias gl="git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(white)%s%C(reset) %C(green)%an %ar %C(reset) %C(bold magenta)%d%C(reset)'"
 alias gla="git log --all --graph --format=format:'%C(bold blue)%h%C(reset) - %C(white)%s%C(reset) %C(bold magenta)%d%C(reset)'"
 
-## ALIAS - PUSH ========================================
+## ALIAS - PUSH/PULL ===================================
 
-alias po='git push -u origin '
+alias po='git push -u origin'
 alias pom='git push -u origin master'
+alias pull='git pull origin master'
 
 ## ALIAS - BRANCHES ====================================
 
@@ -65,21 +52,17 @@ alias l='ls -CF'
 
 ## ALIAS - UNDO ========================================
 
-# git unstage file.js = will remove file from stagging area
-alias unstage='reset HEAD --'
-
-# git undo file.js = will undo all changes made in the file since last commit
-alias undo='checkout --'
-
-# will delete last commit but preserve file changes
-alias rollback='reset --soft HEAD~1'
+alias undo='git checkout --'             # git undo file.js = will undo all changes made in the file since last commit
+alias unstage='git reset HEAD --'        # git unstage file.js = will remove file from stagging area
+alias rollback='git reset --soft HEAD~1' # will delete last commit but preserve file changes
 
 ## FUNCTIONS ===========================================
 
 note (){
-  echo "date: $(date)" >> $HOME/drafts.txt
-  echo "$@" >> $HOME/drafts.txt
-  echo "" >> $HOME/drafts.txt
+  file="$HOME/drafts.txt"
+  echo "date: $(date)" >> $file
+  echo "$@" >> $file
+  echo "" >> $file
 }
 
 dclear () {

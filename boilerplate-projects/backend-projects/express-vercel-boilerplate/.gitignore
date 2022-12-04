@@ -1,0 +1,8 @@
+# FOLDERS ############################
+node_modules/
+
+# FILES ##############################
+.env
+pnpm-lock.yaml
+npm-lock.json
+yarn-lock.json

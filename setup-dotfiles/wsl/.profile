@@ -2,10 +2,10 @@
 
 echo "-> Loaded .profile WSL"
 
-## export usernames ====================================
+## VARIABLES ===========================================
 
-WINUSER=lucasvtiradentes
 DRIVERLETTER=c
+WINUSER=lucasvtiradentes
 DOTENVFOLDER=/mnt/$DRIVERLETTER/Users/$WINUSER/
 
 ## LOAD .profile =======================================
@@ -13,3 +13,5 @@ DOTENVFOLDER=/mnt/$DRIVERLETTER/Users/$WINUSER/
 if [[ ( -n "$BASH_VERSION" ) && ( -f "$DOTENVFOLDER/.profile" )  ]]; then
   source "$DOTENVFOLDER/.profile"
 fi
+
+alias reload="source '$DOTENVFOLDER/.profile'"

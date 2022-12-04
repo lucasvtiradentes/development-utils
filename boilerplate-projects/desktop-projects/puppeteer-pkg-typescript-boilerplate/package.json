@@ -1,0 +1,37 @@
+{
+  "name": "puppeteer-pkg-typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "puppeteer-pkg-typescript-boilerplate",
+  "license": "MIT",
+  "homepage": "https://github.com/lucasvtiradentes/boilerplate-projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucasvtiradentes/boilerplate-projects.git"
+  },
+  "author": {
+    "name": "Lucas Vieira",
+    "email": "lucasvtiradentes@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/lucasvtiradentes/boilerplate-projects/issues"
+  },
+  "main": "src/index.ts",
+  "bin": {
+    "main": "src/index.ts"
+  },
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "prebuild": "ts-node scripts/prebuild.ts",
+    "build": "tsc && cp ./package.json ./dist && pkg dist --out-path build",
+    "postbuild": "ts-node scripts/postbuild.ts"
+  },
+  "dependencies": {
+    "@types/node": "^18.11.9",
+    "@types/puppeteer": "^7.0.4",
+    "path": "^0.12.7",
+    "pkg": "^5.8.0",
+    "puppeteer": "^19.2.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.4"
+  }
+}

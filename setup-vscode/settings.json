@@ -36,7 +36,7 @@
   "files.trimTrailingWhitespace": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": {
-    // "source.organizeImports": true,
+    "source.organizeImports": true,
     "source.fixAll.eslint": true,
     "source.fixAll.tslint": true,
     "source.fixAll.stylelint": true
@@ -68,12 +68,32 @@
   // PRETIER ===================================================================
   "editor.formatOnSave": true,
   "prettier.bracketSpacing": false,
+  "prettier.useTabs": false,
+  "prettier.semi": true,
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 240,
+  "prettier.tabWidth": 2,
+  "prettier.useEditorConfig": true,
+  "prettier.arrowParens": "always",
+  "prettier.trailingComma": "none",
+  // MATERIAL ICON THEME CONFIGURATION =========================================
+  "material-icon-theme.activeIconPack": "nest",
+  "material-icon-theme.files.associations": {
+    "tsconfig.json": "tune",
+    "*.webpack.js": "webpack",
+    "*.proto": "3d",
+    "ormconfig.json": "database"
+  },
   // CSS CONFIGURATION =========================================================
   "[css]": {
     "editor.defaultFormatter": "aeschli.vscode-css-formatter"
   },
   "css.validate": false,
   "css.lint.unknownAtRules": "ignore",
+  // PRISMA CONFIGURATION ======================================================
+  "[prisma]": {
+    "editor.formatOnSave": true
+  },
   // JSON CONFIGURATION ========================================================
   "[jsonc]": {
     "editor.defaultFormatter": "vscode.json-language-features"
@@ -115,5 +135,6 @@
   },
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
-  }
+  },
+  "liveServer.settings.donotShowInfoMsg": true
 }

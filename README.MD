@@ -1,5 +1,5 @@
 <h1 align="center">
-  Development-utils
+  development utils
 </h1>
 
 <p align="center">
@@ -22,7 +22,7 @@
 
 ## :information_source: Description
 
-This is a repository to put all files taht some how help me at development.
+This is a repository to put all my development useful files that somehow help me in my projects.
 
 ## :information_source: Content
 
@@ -34,11 +34,6 @@ This project contains the following content:
       <th>Scope</th>
       <th>Folder</th>
       <th>Description</th>
-    </tr>
-    <tr>
-      <td >knowledge</td>
-      <td align="left"><a href="https://github.com/lucasvtiradentes/development-utils/tree/master/knowledge">knowledge</a></td>
-      <td align="left">Where I store development  related tricky concepts.</td>
     </tr>
     <tr>
       <td>boilerplates</td>

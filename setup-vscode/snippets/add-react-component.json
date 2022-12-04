@@ -16,6 +16,6 @@
       "}",
       "export { ${1: Comp} } "
     ],
-    "description": "Log output to console"
+    "description": "Add react component."
   }
 }

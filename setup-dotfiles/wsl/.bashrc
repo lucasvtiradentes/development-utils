@@ -14,6 +14,8 @@ if [[ ( -n "$BASH_VERSION" ) && ( -f "$DOTENVFOLDER/.profile" )  ]]; then
   source "$DOTENVFOLDER/.profile"
 fi
 
+alias reload="source '$DOTENVFOLDER/.profile'"
+
 ## DEFAULT WSL FUNCTIONS ===============================
 
 # If not running interactively, don't do anything

@@ -1,0 +1,30 @@
+{
+  "name": "express-vercel-boilerplate",
+  "version": "1.0.0",
+  "description": "express-vercel-boilerplate",
+  "license": "MIT",
+  "homepage": "https://github.com/lucasvtiradentes/boilerplate-projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucasvtiradentes/boilerplate-projects.git"
+  },
+  "author": {
+    "name": "Lucas Vieira",
+    "email": "lucasvtiradentes@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/lucasvtiradentes/boilerplate-projects/issues"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": "14.x"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15"
+  }
+}

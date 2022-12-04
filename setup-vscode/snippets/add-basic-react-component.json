@@ -1,0 +1,16 @@
+{
+  "Add-Basic-React-Component": {
+    "scope": "typescriptreact",
+    "prefix": "comp",
+    "body": [
+      "",
+      "const ${1: Comp} = () => {",
+      "  return (",
+      "    <div>${1: Comp}</div>",
+      "  )",
+      "}",
+      "export { ${1: Comp} } "
+    ],
+    "description": "Basic react component."
+  }
+}
