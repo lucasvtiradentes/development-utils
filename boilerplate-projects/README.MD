@@ -89,7 +89,7 @@ This is where I save my boilerplate projects that I use to fast coding.
       <td align="left">-</td>
     </tr>
     <tr>
-      <td rowspan="3">frontend</td>
+      <td rowspan="4">frontend</td>
       <td align="left">
         <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/react-typescript-boilerplate">react-typescript</a>
       </td>
@@ -101,6 +101,13 @@ This is where I save my boilerplate projects that I use to fast coding.
         <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next-typescript-boilerplate">next-typescript</a>
       </td>
       <td align="left">-</td>
+    </tr>
+    <tr>
+      <!-- <td>frontend</td> -->
+      <td align="left">
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next13-typescript-boilerplate">next13-typescript</a>
+      </td>
+      <td align="left">uses the next new app folder.</td>
     </tr>
     <tr>
       <!-- <td>frontend</td> -->

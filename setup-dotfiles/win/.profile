@@ -1,4 +1,4 @@
-## CONVERT WIN PATH TO WSL PATH ========================
+## FUNCTIONS ===========================================
 
 isVarSet(){
   var=$1
@@ -24,11 +24,13 @@ toLower(){
 }
 
 replaceString(){
-  initialString="$1"
-  searchStr="$2"
-  replaceStr="$3"
-  finalStr="${initialString//"$searchStr"/"$replaceStr"}"
-  echo $finalStr
+  if [ $(isVarSet $1) = "true" ]; then
+    initialString="$1"
+    searchStr="$2"
+    replaceStr="$3"
+    finalStr="${initialString//"$searchStr"/"$replaceStr"}"
+    echo $finalStr
+  fi
 }
 
 win2wsl(){
@@ -65,17 +67,9 @@ WIN_PROFILE='C:\Users\lucasvtiradentes\.profile'
 WIN_ALIASES='C:\Users\lucasvtiradentes\.aliases'
 WIN_SECRETS='C:\Users\lucasvtiradentes\.secrets'
 WIN_SHARED_FOLDER='C:\Users\lucasvtiradentes\wsl'
+WIN_BOILERPLATES_FOLDER='C:\Users\lucasvtiradentes\wsl\development-utils\boilerplate-projects'
+WIN_KNOWLEDGE_FOLDER='C:\Users\lucasvtiradentes\wsl\development-knowledge'
 WIN_README_BADGES='C:\Users\lucasvtiradentes\wsl\development-knowledge\001_readme_tools\github-badges.md'
-
-## PATHS ===============================================
-
-[[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
-[[ -d "$HOME/.local/bin" ]] &&   PATH="$HOME/.local/bin:$PATH"
-
-## GUI WLS / xfce4 =====================================
-
-alias gstart="sudo /etc/init.d/xrdp start"
-alias gstop="sudo /etc/init.d/xrdp stop"
 
 ## show file being loaded ==============================
 
@@ -89,7 +83,7 @@ if [ $OS_NAME = "WINDOWS" ]; then
   # export ANDROID_HOME=/c/Users/lucasvtiradentes/Android/Sdk
   # alias gcloud="gcloud.cmd"
   # alias python='winpty python.exe'
-  ## alias docker='winpty docker.exe'
+  # alias docker='winpty docker.exe'
   alias bash='"C:\\Program Files\\Git\\bin\\bash.exe"'
 
   # alias WIN_DRIVE_LETTER=$(replaceString $HOMEDRIVE ":" "")
@@ -98,14 +92,37 @@ if [ $OS_NAME = "WINDOWS" ]; then
 
   alias shared="cd $WIN_SHARED_FOLDER"
   alias home="cd $HOME"
+  
+  alias gh="start '' 'https://github.com/lucasvtiradentes'"
+  alias lk="start '' 'https://www.linkedin.com/in/lucasvtiradentes/'"
+  alias vc="start '' 'https://vercel.com/dashboard'"
+  alias nt="start '' 'https://app.netlify.com/teams/lucasvtiradentes/overview'"
+  alias rw="start '' 'https://railway.app/dashboard'"
 
   alias notepad='C:/Windows/notepad.exe'
-  alias readme="notepad '$WIN_README_BADGES'"
-  alias aliases="notepad '$HOME.aliases'"
+  alias explorer='C:/Windows/explorer.exe'
 
+  alias readme="notepad '$WIN_README_BADGES'"
+  alias profile="notepad '$WIN_PROFILE'"
+  alias aliases="notepad '$WIN_ALIASES'"
+
+  alias boiler="explorer '$WIN_BOILERPLATES_FOLDER'"
+  alias know="explorer '$WIN_KNOWLEDGE_FOLDER'"
+  alias projects="explorer '$WIN_SHARED_FOLDER'"
 
   [[ ( -e $WIN_ALIASES ) ]] && source "$WIN_ALIASES"
   [[ ( -e $WIN_SECRETS ) ]] && source "$WIN_SECRETS"
+
+  ## PATHS ===============================================
+
+  [[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
+  [[ -d "$HOME/.local/bin" ]] &&   PATH="$HOME/.local/bin:$PATH"
+
+  ## GUI WLS / xfce4 =====================================
+
+  alias gstart="sudo /etc/init.d/xrdp start"
+  alias gstop="sudo /etc/init.d/xrdp stop"
+
 fi
 
 ## WSL ACTIONS =========================================
