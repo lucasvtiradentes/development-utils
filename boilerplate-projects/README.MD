@@ -23,110 +23,110 @@ This is where I save my boilerplate projects that I use to fast coding.
     <tr>
       <td rowspan="4">backend</td>
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/express-react-boilerplate">express-react</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/backend-projects/express-react-boilerplate">express-react</a>
       </td>
       <td align="left">Atachs multiple react sites into a express server.</td>
     </tr>
     <tr>
       <!-- <td>backend</td> -->
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/express-server-typescript-boilerplate">express-server-typescript</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/backend-projects/express-server-typescript-boilerplate">express-server-typescript</a>
       </td>
       <td align="left">-</td>
     </tr>    <tr>
       <!-- <td>backend</td> -->
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/express-vercel-boilerplate">express-vercel</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/backend-projects/express-vercel-boilerplate">express-vercel</a>
       </td>
       <td align="left">Uses express on vercel platform.</td>
     </tr>
     <tr>
       <!-- <td>backend</td> -->
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/graphql-api-boilerplate">graphql-api</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/backend-projects/graphql-api-boilerplate">graphql-api</a>
       </td>
       <td align="left">-</td>
     </tr>
     <tr>
       <td>browser</td>
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/chrome-extension-boilerplate">chrome-extension</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/browser-projects/chrome-extension-boilerplate">chrome-extension</a>
       </td>
       <td align="left">-</td>
     </tr>
     <tr>
       <td rowspan="5">desktop</td>
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/electron-puppeteer-typescript-boilerplate">electron-puppeteer-typescript</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/desktop-projects/electron-puppeteer-typescript-boilerplate">electron-puppeteer-typescript</a>
       </td>
       <td align="left">Embeds puppeteer into a electron browser instance.</td>
     </tr>
     <tr>
       <!-- <td>desktop</td> -->
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/electron-typescript-boilerplate">electron-typescript</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/desktop-projects/electron-typescript-boilerplate">electron-typescript</a>
       </td>
       <td align="left">-</td>
     </tr>
     <tr>
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/node-typescript-boilerplate">node-typescript</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/desktop-projects/node-typescript-boilerplate">node-typescript</a>
       </td>
       <td align="left">-</td>
     </tr>
     <tr>
       <!-- <td rowspan="4">other</td> -->
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/puppeteer-pkg-typescript-boilerplate">puppeteer-pkg-typescript</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/desktop-projects/puppeteer-pkg-typescript-boilerplate">puppeteer-pkg-typescript</a>
       </td>
       <td align="left">-</td>
     </tr>
     <tr>
       <!-- <td>desktop</td> -->
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/whatsapp-chatbot-boilerplate">whatsapp-chatbot</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/desktop-projects/whatsapp-chatbot-boilerplate">whatsapp-chatbot</a>
       </td>
       <td align="left">-</td>
     </tr>
     <tr>
       <td rowspan="3">frontend</td>
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/react-typescript-boilerplate">react-typescript</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/react-typescript-boilerplate">react-typescript</a>
       </td>
       <td align="left">-</td>
     </tr>
     <tr>
       <!-- <td>frontend</td> -->
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/next-typescript-boilerplate">next-typescript</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next-typescript-boilerplate">next-typescript</a>
       </td>
       <td align="left">-</td>
     </tr>
     <tr>
       <!-- <td>frontend</td> -->
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/next-typescript-tailwind-boilerplate">next-typescript-tailwind</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next-typescript-tailwind-boilerplate">next-typescript-tailwind</a>
       </td>
       <td align="left">-</td>
     </tr>
     <tr>
       <td rowspan="3">packages</td>
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/node-typescript-github-package-ci-cd-publish-boilerplate">node-typescript-github-package-ci-cd-publish</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/packages-projects/node-typescript-github-package-ci-cd-publish-boilerplate">node-typescript-github-package-ci-cd-publish</a>
       </td>
       <td align="left">Automatclly publishes a package to github packages with github actions.</td>
     </tr>
     <tr>
       <!-- <td>package</td> -->
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/node-typescript-npm-package-ci-cd-publish-boilerplate">node-typescript-npm-package-ci-cd-publish</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/packages-projects/node-typescript-npm-package-ci-cd-publish-boilerplate">node-typescript-npm-package-ci-cd-publish</a>
       </td>
       <td align="left">Automatclly publishes a package to npm with github actions.</td>
     </tr>
     <tr>
       <!-- <td>package</td> -->
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/node-typescript-npm-package-ci-cd-publish-with-semantic-release-boilerplate">node-typescript-npm-package-ci-cd-publish-with-semantic-release</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/packages-projects/node-typescript-npm-package-ci-cd-publish-with-semantic-release-boilerplate">node-typescript-npm-package-ci-cd-publish-with-semantic-release</a>
       </td>
       <td align="left">Automatclly publishes a package to npm with github actions and semantic release.</td>
     </tr>
