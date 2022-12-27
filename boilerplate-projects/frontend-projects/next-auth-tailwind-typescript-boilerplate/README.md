@@ -1,5 +1,5 @@
 <h1 align="center">
-  Next typescript boilerplate
+  next-auth-tailwind-typescript-boilerplate
 </h1>
 
 <p align="center">
@@ -12,7 +12,7 @@
 
 ## :information_source: Description
 
-This is next typescript boilerplate I use whenever I need to code next websites.
+This is next typescript boilerplate I use whenever I need to code next websites with auth ready.
 
 ## :information_source: Features
 

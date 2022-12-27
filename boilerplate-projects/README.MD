@@ -89,9 +89,31 @@ This is where I save my boilerplate projects that I use to fast coding.
       <td align="left">-</td>
     </tr>
     <tr>
-      <td rowspan="5">frontend</td>
+      <!-- <td>frontend</td> -->
+      <td rowspan="7">frontend</td>
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/react-typescript-boilerplate">react-typescript</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next-app-auth-tailwind-typescript-boilerplate">next-app-auth-tailwind-typescript</a>
+      </td>
+      <td align="left">-</td>
+    </tr>
+    <tr>
+      <!-- <td>frontend</td> -->
+      <td align="left">
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next-app-typescript-boilerplate">next-app-typescript</a>
+      </td>
+      <td align="left">uses the next new app folder.</td>
+    </tr>
+    <tr>
+      <!-- <td>frontend</td> -->
+      <td align="left">
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next-app-typescript-tailwind-boilerplate">next-app-typescript-tailwind</a>
+      </td>
+      <td align="left">-</td>
+    </tr>
+    <tr>
+      <!-- <td>frontend</td> -->
+      <td align="left">
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next-auth-tailwind-typescript-boilerplate">next-auth-tailwind-typescript</a>
       </td>
       <td align="left">-</td>
     </tr>
@@ -105,21 +127,14 @@ This is where I save my boilerplate projects that I use to fast coding.
     <tr>
       <!-- <td>frontend</td> -->
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next13-typescript-boilerplate">next13-typescript</a>
-      </td>
-      <td align="left">uses the next new app folder.</td>
-    </tr>
-    <tr>
-      <!-- <td>frontend</td> -->
-      <td align="left">
         <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next-typescript-tailwind-boilerplate">next-typescript-tailwind</a>
       </td>
       <td align="left">-</td>
     </tr>
     <tr>
-      <!-- <td>frontend</td> -->
+      <!-- <td rowspan="5">frontend</td> -->
       <td align="left">
-        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next13-auth-tailwind-typescript-boilerplate">next13-auth-tailwind-typescript</a>
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/react-typescript-boilerplate">react-typescript</a>
       </td>
       <td align="left">-</td>
     </tr>
