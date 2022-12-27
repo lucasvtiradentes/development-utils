@@ -1,0 +1,57 @@
+{
+  "name": "next13-tailwind-typescript-boilerplate",
+  "version": "1.0.0",
+  "description": "next13-tailwind-typescript-boilerplate",
+  "license": "MIT",
+  "homepage": "https://github.com/lucasvtiradentes/boilerplate-projects",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucasvtiradentes/boilerplate-projects.git"
+  },
+  "author": {
+    "name": "Lucas Vieira",
+    "email": "lucasvtiradentes@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/lucasvtiradentes/boilerplate-projects/issues"
+  },
+  "scripts": {
+    "start": "next start",
+    "dev": "next dev",
+    "build": "next build",
+    "commit": "cz",
+    "test": "echo tests",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "formik": "^2.2.9",
+    "mongoose": "^6.8.1",
+    "next": "13.0.4",
+    "next-auth": "^4.18.7",
+    "next-themes": "^0.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.7.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@types/bcryptjs": "^2.4.2",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "autoprefixer": "^10.4.13",
+    "commitizen": "^4.2.6",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^8.0.2",
+    "postcss": "^8.4.20",
+    "prettier": "^2.8.1",
+    "tailwindcss": "^3.2.4",
+    "typescript": "4.9.3"
+  }
+}

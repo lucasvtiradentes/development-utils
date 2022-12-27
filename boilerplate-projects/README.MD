@@ -89,7 +89,7 @@ This is where I save my boilerplate projects that I use to fast coding.
       <td align="left">-</td>
     </tr>
     <tr>
-      <td rowspan="4">frontend</td>
+      <td rowspan="5">frontend</td>
       <td align="left">
         <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/react-typescript-boilerplate">react-typescript</a>
       </td>
@@ -113,6 +113,13 @@ This is where I save my boilerplate projects that I use to fast coding.
       <!-- <td>frontend</td> -->
       <td align="left">
         <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next-typescript-tailwind-boilerplate">next-typescript-tailwind</a>
+      </td>
+      <td align="left">-</td>
+    </tr>
+    <tr>
+      <!-- <td>frontend</td> -->
+      <td align="left">
+        <a href="https://github.com/lucasvtiradentes/development-utils/tree/master/boilerplate-projects/frontend-projects/next13-auth-tailwind-typescript-boilerplate">next13-auth-tailwind-typescript</a>
       </td>
       <td align="left">-</td>
     </tr>

@@ -1,0 +1,15 @@
+# REF: https://help.github.com/articles/ignoring-files/
+
+# FOLDERS ####################
+.next/
+.vscode/
+node_modules/
+out/
+build/
+offline/
+
+# FILES ######################
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+yarn-error.log
