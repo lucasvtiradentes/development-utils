@@ -4,17 +4,13 @@ echo "-> Loaded .bashrc WSL"
 
 ## VARIABLES ===========================================
 
-DRIVERLETTER=c
-WINUSER=lucasvtiradentes
-DOTENVFOLDER=/mnt/$DRIVERLETTER/Users/$WINUSER/
+DOTENVFOLDER=/mnt/c/Users/lucasvtiradentes
 
 ## LOAD .profile =======================================
 
 if [[ ( -n "$BASH_VERSION" ) && ( -f "$DOTENVFOLDER/.profile" )  ]]; then
   source "$DOTENVFOLDER/.profile"
 fi
-
-alias reload="source '$DOTENVFOLDER/.profile'"
 
 ## DEFAULT WSL FUNCTIONS ===============================
 

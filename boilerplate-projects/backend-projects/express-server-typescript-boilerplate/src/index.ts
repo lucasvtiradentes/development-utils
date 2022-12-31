@@ -1,40 +1,22 @@
-import cors from 'cors'
-import bodyParser from 'body-parser'
-import express from 'express'
-import { join } from 'path'
+import { NODE_ENV, SERVER_PORT, SERVER_URL } from './configs/configs';
+import { createServer } from './server/server';
+import { setupGracefulShutdown, setupProcessEvents } from './utils/handle-events';
+import { logger } from './utils/logger';
 
-import {
-  SERVER_PORT,
-  SERVER_BASE,
-} from './configs/configs'
+logger(`application started in [${NODE_ENV}] mode`);
 
-import homePageController from './pages/homepage/home-page-controller'
-
-let server = express()
-
-const jsonParser = bodyParser.json()
-server.use(jsonParser)
-server.use(express.json({ limit: '25mb' }));
-
-const urlencodedParser = bodyParser.urlencoded({ extended: true })
-server.use(urlencodedParser)
-server.use(express.urlencoded({ limit: '25mb' }));
-
-server.use(cors({
-  origin: [
-    'http://localhost:3000',
-    'http://localhost:4000'
-  ]
-}));
-
-server.use('/pages', express.static(join(__dirname, '/pages/')))
-
-server.get("/", homePageController);
-
-server.get("*", (req, res) => {
-  res.send("Error 404 - Page not found!")
+const server = createServer().listen(SERVER_PORT, async () => {
+  logger(`server [${SERVER_URL}] was started at port [${SERVER_PORT}] and pid [${process.pid}]`);
 });
 
-server.listen(SERVER_PORT, async () => {
-  console.log(`Server ${SERVER_BASE} iniciado na porta ${SERVER_PORT}`)
-}).setTimeout(0)
+setupProcessEvents(process);
+
+setupGracefulShutdown(process, (signal: string) => {
+  logger(`\n[${signal}] signal was recieved`);
+  logger(`graceful shutdown initiated`);
+
+  server.close(() => {
+    logger('server was closed');
+    process.exit(0);
+  });
+});

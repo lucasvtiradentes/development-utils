@@ -2,59 +2,60 @@
 
 echo "-> Loaded .aliases WIN"
 
-## ALIAS - NPM =========================================
-
-alias ni='npm install'
-alias nr='npm run'
-
 ## ALIAS - COMMITS =====================================
 
-alias gaa='git add .'
-alias gc="git commit -m"
-alias gaca='git add . && git commit --amend --no-edit'
-alias gacam='git add . && git commit --amend -m'
-
-## ALIAS - LOGS ========================================
-
-alias lg="git log --oneline --decorate --all --graph"
-alias gl="git log --graph --format=format:'%C(bold blue)%h%C(reset) - %C(white)%s%C(reset) %C(green)%an %ar %C(reset) %C(bold magenta)%d%C(reset)'"
-alias gla="git log --all --graph --format=format:'%C(bold blue)%h%C(reset) - %C(white)%s%C(reset) %C(bold magenta)%d%C(reset)'"
-
-## ALIAS - PUSH/PULL ===================================
-
-alias po='git push -u origin'
-alias pom='git push -u origin master'
-alias pull='git pull origin master'
+alias gc="git commit -m"                                #COMMIT
+alias gca='git commit --amend -m'                       #COMMIT
+alias gcan='git commit --amend --no-edit'               #COMMIT
+alias gaa='git add .'                                   #COMMIT
+alias gaca='git add . && git commit --amend --no-edit'  #COMMIT
+alias gacan='git add . && git commit --amend --no-edit' #COMMIT
 
 ## ALIAS - BRANCHES ====================================
 
-alias gco='git checkout'
-alias gcom='git checkout master'
-alias col='git checkout --'
-alias cob='git checkout -b'
-alias gb='git branch'
-alias gba='git branch --all'
-alias gbd='git branch -D'
+alias cb='git checkout -b'     #BRANCH
+alias bm='git checkout master' #BRANCH
+alias bl='git branch --all'    #BRANCH
+alias bd='git branch -D'       #BRANCH
 
-## ALIAS - OTHER =======================================
+## ALIAS - PUSH/PULL ===================================
 
-alias d=docker
-alias dc=docker-compose
-alias c='clear'
-alias gcp='git cherry-pick'
-alias gd='git diff -w'
-
-## ALIAS - LS ==========================================
-
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias po='git push origin'          #PUSH_PULL
+alias pom='git push origin master'  #PUSH_PULL
+alias pull='git pull origin master' #PUSH_PULL
 
 ## ALIAS - UNDO ========================================
 
-alias undo='git checkout --'             # git undo file.js = will undo all changes made in the file since last commit
-alias unstage='git reset HEAD --'        # git unstage file.js = will remove file from stagging area
-alias rollback='git reset --soft HEAD~1' # will delete last commit but preserve file changes
+alias undo='git checkout --'             #UNDO - git undo file.js = will undo all changes made in the file since last commit
+alias unstage='git reset HEAD --'        #UNDO - git unstage file.js = will remove file from stagging area
+alias rollback='git reset --soft HEAD~1' #UNDO - will delete last commit but preserve file changes
+
+## ALIAS - GIT OTHERS ==================================
+
+alias lg="git log --oneline --decorate --all --graph" #GIT_OTHER
+alias gcp='git cherry-pick'                           #GIT_OTHER
+alias gd='git diff -w'                                #GIT_OTHER
+
+## ALIAS - NPM =========================================
+
+alias ni='npm install' #NPM
+alias nr='npm run'     #NPM
+
+## ALIAS - DOCKER ======================================
+
+alias dc=docker          #DOCKER
+alias dcc=docker-compose #DOCKER
+
+dclear () {
+  docker ps -a -q | xargs docker kill -f
+  docker ps -a -q | xargs docker rm -f
+  docker images | grep "api\|none" | awk '{print $3}' | xargs docker rmi -f
+  docker volume prune -f
+}
+
+## HUSKY ===============================================
+
+alias hus='npx husky install' #HUSKY
 
 ## FUNCTIONS ===========================================
 
@@ -63,11 +64,4 @@ note (){
   echo "date: $(date)" >> $file
   echo "$@" >> $file
   echo "" >> $file
-}
-
-dclear () {
-  docker ps -a -q | xargs docker kill -f
-  docker ps -a -q | xargs docker rm -f
-  docker images | grep "api\|none" | awk '{print $3}' | xargs docker rmi -f
-  docker volume prune -f
 }

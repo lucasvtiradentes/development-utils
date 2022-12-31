@@ -10,21 +10,21 @@ isVarSet(){
 }
 
 getArrItem(){
-  if [ $(isVarSet $1) = "true" ]; then
+  if [ $(isVarSet $1) == "true" ]; then
     arrItem=$(echo "$1" | cut -d "$2" -f "$3")
     echo $arrItem
   fi
 }
 
 toLower(){
-  if [ $(isVarSet $1) = "true" ]; then
+  if [ $(isVarSet $1) == "true" ]; then
     lower=$(echo "$1" | sed 's/.*/\L&/')
     echo $lower
   fi
 }
 
 replaceString(){
-  if [ $(isVarSet $1) = "true" ]; then
+  if [ $(isVarSet $1) == "true" ]; then
     initialString="$1"
     searchStr="$2"
     replaceStr="$3"
@@ -34,6 +34,7 @@ replaceString(){
 }
 
 win2wsl(){
+  shouldRemoveMnt="$2"
   initialString="$1"
   initialPath="${initialString//"\\"/"/"}"
 
@@ -43,7 +44,11 @@ win2wsl(){
 
   driveFixed=$(replaceString "$initialPath" "$initialDrive" "$finalDrive")
 
-  echo /mnt/$driveFixed
+  if [[ "$shouldRemoveMnt" == "false" ]]; then
+    echo /$driveFixed
+  else
+    echo /mnt/$driveFixed
+  fi
 }
 
 detectOS(){
@@ -60,6 +65,95 @@ detectOS(){
   echo $OS_TMP
 }
 
+getCategoryAliases(){
+
+  file=$1
+  category=$2
+
+  [[ ( ! -e $file ) ]] && return
+  allFoundAliases=$(grep \#$category "$file")
+  [[ ( -z "$allFoundAliases" ) ]] && return
+
+  echo == $category ====================================
+
+  arrVar=("")
+  x=1
+  while [ true ]; do
+    curAlias=$(echo "$allFoundAliases" | cut -d$'\n' -f $x)
+    [[ ( "$curAlias" = "" ) ]] && break
+    removeLabel=$(echo "$curAlias" | cut -d "#" -f "1")
+    removeAlias=$(echo "${removeLabel/alias /""}")
+    spaceEqualSign=$(echo "${removeAlias/\=/" = "}")
+    finalFixedAlias=$removeAlias
+    x=$(( $x + 1 ))
+    arrVar+=("$finalFixedAlias")
+  done
+
+  for value in "${arrVar[@]}"; do
+    [[ ! "$value" = "" ]] && echo $value
+  done
+
+  echo ""
+
+}
+
+## FUNCTIONS ===========================================
+
+openLink(){
+  link=$1
+
+  if [ $OS_NAME = "WINDOWS" ]; then
+    start "" "$link"
+  elif [[ $OS_NAME = "WSL1" || $OS_NAME = "WSL2" ]]; then
+    xdg-open "$link" >/dev/null 2>&1
+  fi
+}
+
+openFile(){
+  file=$1
+
+  if [ $OS_NAME = "WINDOWS" ]; then
+    start "notepad" "$file"
+  elif [ $OS_NAME == "WSL1" ]; then
+    cat $(win2wsl $file)
+  elif [ $OS_NAME == "WSL2" ]; then
+    gedit "$(win2wsl $file)" >/dev/null 2>&1
+  fi
+
+}
+
+openFolder(){
+  folder=$1
+
+  if [ $OS_NAME = "WINDOWS" ]; then
+    start "explorer" "$folder"
+  elif [ $OS_NAME == "WSL1" ]; then
+    xdg-open "$folder"
+  elif [ $OS_NAME == "WSL2" ]; then
+    xdg-open "$(win2wsl $folder)" >/dev/null 2>&1
+  fi
+
+}
+
+getFixedPathFromWinPath(){
+  file=$1
+
+  if [ $OS_NAME = "WINDOWS" ]; then
+    echo $(win2wsl "$file" "false")
+  elif [ $OS_NAME == "WSL1" ]; then
+    echo "$(win2wsl $file)"
+  elif [ $OS_NAME == "WSL2" ]; then
+    echo "$(win2wsl $file)"
+  fi
+
+}
+
+loadFile(){
+  file=$1
+  fixedFile=$(getFixedPathFromWinPath "$file")
+  [[ ( -e $fixedFile ) ]] && source "$fixedFile"
+}
+
 ## export variables ====================================
 
 OS_NAME=$(detectOS)
@@ -67,61 +161,129 @@ WIN_PROFILE='C:\Users\lucasvtiradentes\.profile'
 WIN_ALIASES='C:\Users\lucasvtiradentes\.aliases'
 WIN_SECRETS='C:\Users\lucasvtiradentes\.secrets'
 WIN_SHARED_FOLDER='C:\Users\lucasvtiradentes\wsl'
-WIN_BOILERPLATES_FOLDER='C:\Users\lucasvtiradentes\wsl\development-utils\boilerplate-projects'
-WIN_KNOWLEDGE_FOLDER='C:\Users\lucasvtiradentes\wsl\development-knowledge'
-WIN_README_BADGES='C:\Users\lucasvtiradentes\wsl\development-knowledge\001_readme_tools\github-badges.md'
 
 ## show file being loaded ==============================
 
 echo "-> Loaded .profile WIN"
 
+## LOAD REMAINING FILES ================================
+
+loadFile "$WIN_ALIASES"
+loadFile "$WIN_SECRETS"
+
+## ALL SYSTEMS ACTIONS =================================
+
+showAllAliasAvailableCommands(){
+
+  if [ $OS_NAME = "WINDOWS" ]; then
+    getCategoryAliases "$(getFixedPathFromWinPath "$WIN_PROFILE")" "OBSIDIAN"
+  elif [[ $OS_NAME = "WSL1" || $OS_NAME = "WSL2" ]]; then
+    getCategoryAliases "$(getFixedPathFromWinPath "$WIN_PROFILE")" "XFCE4"
+  fi
+
+  # ALIAS HELP
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_PROFILE")" "COMMAND"
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_PROFILE")" "SITE"
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_PROFILE")" "FILES"
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_PROFILE")" "FOLDER"
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_PROFILE")" "CFOLDER"
+
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_ALIASES")" "COMMIT"
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_ALIASES")" "BRANCH"
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_ALIASES")" "PUSH_PULL"
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_ALIASES")" "UNDO"
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_ALIASES")" "GIT_OTHER"
+
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_ALIASES")" "NPM"
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_ALIASES")" "DOCKER"
+  getCategoryAliases "$(getFixedPathFromWinPath "$WIN_ALIASES")" "HUSKY"
+
+}
+
+folders(){
+  alias pj='openFolder "$WIN_SHARED_FOLDER"'                                                        #FOLDER
+  alias df='openFolder "C:\Users\lucasvtiradentes\wsl\_dev\development-utils\setup-dotfiles"'       #FOLDER
+  alias bo='openFolder "C:\Users\lucasvtiradentes\wsl\_dev\development-utils\boilerplate-projects"' #FOLDER
+  alias dp='openFolder "G:\Meu Drive\ANOTAÇÕES\DEVELOPMENT\001_design_patterns"'                    #FOLDER
+  alias en='openFolder "G:\Meu Drive\ANOTAÇÕES\GERAL\004 inglês"'                                   #FOLDER
+  alias js='openFolder "G:\Meu Drive\ANOTAÇÕES\DEVELOPMENT\003_js_stack"'                           #FOLDER
+  alias dev='openFolder "C:\Users\lucasvtiradentes\wsl\_dev"'                                       #FOLDER
+  alias books='openFolder "G:\Meu Drive\PROGRAMAÇÃO\dev books"'                                     #FOLDER
+}
+
+cd_folders(){
+  alias ch='cd $HOME'                                            #CFOLDER
+  alias cpj='cd $(getFixedPathFromWinPath "$WIN_SHARED_FOLDER")' #CFOLDER
+}
+
+sites(){
+  alias gh='openLink "https://github.com/lucasvtiradentes"'                     #SITE
+  alias lk='openLink "https://www.linkedin.com/in/lucasvtiradentes/"'           #SITE
+  alias vc='openLink "https://vercel.com/dashboard"'                            #SITE
+  alias nt='openLink "https://app.netlify.com/teams/lucasvtiradentes/overview"' #SITE
+  alias rw='openLink "https://railway.app/dashboard"'                           #SITE
+  alias gm='openLink "https://mail.google.com/mail/u/0/#inbox"'                 #SITE
+}
+
+files(){
+  alias profile='openFile "$WIN_PROFILE"'                                                                      #FILES
+  alias aliases='openFile "$WIN_ALIASES"'                                                                      #FILES
+  alias secrets='openFile "$WIN_SECRETS"'                                                                      #FILES
+  alias helper='openFile "C:\Users\lucasvtiradentes\.helper"'                                                  #FILES
+  alias tasks='openFile "C:\Users\lucasvtiradentes\.tasks"'                                                    #FILES
+  alias readme='openFile "C:\Users\lucasvtiradentes\wsl\_dev\development-utils\readme-tools\github-badges.md"' #FILES
+  alias tools='openFile "G:\Meu Drive\ANOTAÇÕES\DEVELOPMENT\000_general\tools.md"'                             #FILES
+}
+
+folders
+cd_folders
+sites
+files
+
+alias l='ls -alF'                                            #COMMAND
+alias c=clear                                                #COMMAND
+alias h=showAllAliasAvailableCommands                        #COMMAND
+alias r='source "$(getFixedPathFromWinPath "$WIN_PROFILE")"' #COMMAND
+
 ## WINDOWS ACTIONS =====================================
 
 if [ $OS_NAME = "WINDOWS" ]; then
 
-  # export PATH=/c/Users/lucasvtiradentes/Android/Sdk/platform-tools:$PATH
-  # export ANDROID_HOME=/c/Users/lucasvtiradentes/Android/Sdk
-  # alias gcloud="gcloud.cmd"
-  # alias python='winpty python.exe'
-  # alias docker='winpty docker.exe'
-  alias bash='"C:\\Program Files\\Git\\bin\\bash.exe"'
+  if [ ! -d "$(win2wsl $WIN_SHARED_FOLDER false)" ]; then
+    mkdir -p "$(win2wsl $WIN_SHARED_FOLDER false)"
+  fi
 
-  # alias WIN_DRIVE_LETTER=$(replaceString $HOMEDRIVE ":" "")
-  # alias WIN_USER=$(getArrItem $USERPROFILE "\\" 3)
-  alias reload="source '$HOME/.profile'"
-
-  alias shared="cd $WIN_SHARED_FOLDER"
-  alias home="cd $HOME"
+  updateDotEnvFiles(){
+    dotfilesFolder='C:\Users\lucasvtiradentes\wsl\_dev\development-utils\setup-dotfiles'
+    winDotFiles='C:\Users\lucasvtiradentes\wsl\_dev\development-utils\setup-dotfiles\win'
+    wslDotFiles='C:\Users\lucasvtiradentes\wsl\_dev\development-utils\setup-dotfiles\wsl'
   
-  alias gh="start '' 'https://github.com/lucasvtiradentes'"
-  alias lk="start '' 'https://www.linkedin.com/in/lucasvtiradentes/'"
-  alias vc="start '' 'https://vercel.com/dashboard'"
-  alias nt="start '' 'https://app.netlify.com/teams/lucasvtiradentes/overview'"
-  alias rw="start '' 'https://railway.app/dashboard'"
+    cp -fr "$WIN_PROFILE" "$winDotFiles"
+    cp -fr "$WIN_ALIASES" "$winDotFiles"
+    cp -fr "C:\Users\lucasvtiradentes\.helper" "$winDotFiles"
+    # cp -fr "C:\Users\lucasvtiradentes\.tasks" "$winDotFiles"
+    # cp -fr "$WIN_SECRETS" "$winDotFiles"
+    
+    echo "dotenv file were updated"
+  }
 
-  alias notepad='C:/Windows/notepad.exe'
-  alias explorer='C:/Windows/explorer.exe'
+  winAddPaths(){
+    [[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
+    [[ -d "$HOME/.local/bin" ]] &&   PATH="$HOME/.local/bin:$PATH"
+  }
 
-  alias readme="notepad '$WIN_README_BADGES'"
-  alias profile="notepad '$WIN_PROFILE'"
-  alias aliases="notepad '$WIN_ALIASES'"
+  winObsidianConfigs(){
+    # https://help.obsidian.md/Advanced+topics/Using+obsidian+URI
+    alias ob='getCategoryAliases "$(getFixedPathFromWinPath "$WIN_PROFILE")" "OBSIDIAN"'  #OBSIDIAN
+    alias og='start "" "obsidian://open-vault?vault=GERAL"'                               #OBSIDIAN
+    alias od='start "" "obsidian://open-vault?vault=DEVELOPMENT"'                         #OBSIDIAN
+    alias or='start "" "obsidian://open-vault?vault=RECRUITMENT UTILS"'                   #OBSIDIAN
+  }
 
-  alias boiler="explorer '$WIN_BOILERPLATES_FOLDER'"
-  alias know="explorer '$WIN_KNOWLEDGE_FOLDER'"
-  alias projects="explorer '$WIN_SHARED_FOLDER'"
+  winAddPaths
+  winObsidianConfigs
 
-  [[ ( -e $WIN_ALIASES ) ]] && source "$WIN_ALIASES"
-  [[ ( -e $WIN_SECRETS ) ]] && source "$WIN_SECRETS"
-
-  ## PATHS ===============================================
-
-  [[ -d "$HOME/bin" ]] && PATH="$HOME/bin:$PATH"
-  [[ -d "$HOME/.local/bin" ]] &&   PATH="$HOME/.local/bin:$PATH"
-
-  ## GUI WLS / xfce4 =====================================
-
-  alias gstart="sudo /etc/init.d/xrdp start"
-  alias gstop="sudo /etc/init.d/xrdp stop"
+  alias update=updateDotEnvFiles #COMMAND
 
 fi
 
@@ -129,29 +291,22 @@ fi
 
 if [[ $OS_NAME = "WSL1" || $OS_NAME = "WSL2" ]]; then
 
-#  if [ -e "$(win2wsl $WIN_ALIASES)" ]; then
-#    [[ ( -e "$(win2wsl $WIN_PROFILE)" ) ]] && rm "$(win2wsl $WIN_PROFILE)"
-#    sed 's/\r$//' "$(win2wsl $WIN_ALIASES)" > "$(win2wsl $WIN_PROFILE)" # remove CR from file
-#    source "$(win2wsl $WIN_PROFILE)"
-#  fi
-
   if [ ! -d "$(win2wsl $WIN_SHARED_FOLDER)" ]; then
     mkdir -p "$(win2wsl $WIN_SHARED_FOLDER)"
   fi
 
-  alias shared="cd '$(win2wsl $WIN_SHARED_FOLDER)'"
-  alias home="cd '$(win2wsl $HOME)'"
-  WSL_WIN_README_BADGES=$(win2wsl "$WIN_README_BADGES")
+  wslVariables(){
+    alias cr='cd /' #CFOLDER
+  }
 
-  if [ $OS_NAME = "WSL1" ]; then
-    alias aliases="cat '$(win2wsl $WIN_ALIASES)'"
-    alias readme="cat '$WSL_WIN_README_BADGES'"
-  elif [ $OS_NAME = "WSL2" ]; then
-    alias aliases="gedit '$(win2wsl $WIN_ALIASES)'"   # remember to install gedit, sudo apt install gedit
-    alias readme="gedit '$WSL_WIN_README_BADGES'"
-  fi
+  WlsGuiXfce4(){
+    alias gstart="sudo /etc/init.d/xrdp start"  #XFCE4
+    alias gstop="sudo /etc/init.d/xrdp stop"    #XFCE4
+    alias gpath="C:\WINDOWS\system32\mstsc.exe" #XFCE4
+    alias ginfo="localhost:3390"                #XFCE4
+  }
 
-  [[ ( -e "$(win2wsl $WIN_ALIASES)" ) ]] && source "$(win2wsl $WIN_ALIASES)"
-  [[ ( -e "$(win2wsl $WIN_SECRETS)" ) ]] && source "$(win2wsl $WIN_SECRETS)"
+  wslVariables
+  WlsGuiXfce4
 
 fi

@@ -1,0 +1,38 @@
+## LOAD HELPER =========================================
+
+echo "-> Loaded .helper WIN"
+
+## TYPESCRIPT ==========================================
+
+echo "Commands to install typescript"
+
+## ESLINT ==============================================
+
+echo "Commands to install eslint"
+
+## PRETTIER ============================================
+
+echo "Commands to install prettier"
+
+## HUSKY ===============================================
+
+echo "Commands to install husky"
+
+## COMMITLINT ==========================================
+
+pnpm add husky -D
+npx husky install
+npx husky add .husky/commit-msg 'npx --no -- commitlint --edit ${1}'
+"husky": {
+  "hooks": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  }
+}
+
+## COMMITIZEN ==========================================
+
+echo "Commands to install commitzen"
+
+## COMMITIZEN EMOJI ====================================
+
+echo "Commands to install commitzen emoji"
